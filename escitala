@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+//CODIGO CREADO ANTES DEL 26/03
+string Ordenar(int fil,int col, string message){//uso esta funcion para los casos donde un espacio equivale a '-' 
+	if (fil*col >= message.length()){
+		for(int a=0;a<fil*col;a++){
+			if (message[a]==' '  ){message[a]='-';}
+			if (a>=message.length()	){message=message + '-';}
+		}
+	};
+	return message;
+}
+vector<char> Conversion(int a,int b,string message){//Esta funcion vector ayudara tanto al cifrado como el decifrado
+	vector<char>cript;
+	for(int k=0;k<a;k++){
+		for(int i=0;i<b;i++){
+			int b=k+(a*i);// depende de la posicion sumara y multiplicara para guardar poco a poco el decifrado o cifrado
+			cript.push_back(message[b]);
+		}
+	}
+	return cript;//retorna el vector desordenado u ordenado depende de las varibles a, b variando entre filas y columnas
+}
+class Send_message{
+	private:
+		int fila,columna;
+		string message,message_arreglado;
+	public:
+		Send_message(int f,int c,string m){// contructor de la clase
+			fila=f;columna=c;message=m;
+			}
+		void cifrado(){// ordenamos el mensaje e imprimimos el cifrado del mensaje
+			message_arreglado=Ordenar(fila,columna,message);
+			vector <char> cifrar;
+			cifrar=Conversion(columna,fila,message_arreglado);//teniendo en cuenta que creamos solo vector que toma valores verticales de la matriz
+			for(int j=0;j<cifrar.size();j++){
+			message_arreglado[j]=cifrar[j];cout<<cifrar[j];}
+			cout<<endl;
+			}
+		void decifrado(){/ creamos el vector decifrar donde se guardara el mensaje luego de hacer la conversion
+			vector <char> decifrar;
+			decifrar=Conversion(fila,columna,message_arreglado);
+			for(int j=0;j<decifrar.size();j++){
+				if (decifrar[j]=='-'){decifrar[j]=' ';
+				}
+				cout<<decifrar[j];}
+				cout<<endl;
+			}
+};
+int main(){
+	int filas,columnas;
+	string mensaje;//Aqui hacemos nuestra facilidad para ingresar la clave junto al mensaje
+	cout<<"Ingresa tu clave(f):";cin>>filas;
+	cout<<endl<<"Ingresa tu clave(c):";cin>>columnas;
+	cout<<endl<<"Ingresa el mensaje que quieres enviar:";
+	getline(cin, mensaje);getline(cin, mensaje);
+	Send_message Emisor (filas,columnas,mensaje);
+	Emisor.cifrado();
+	Emisor.decifrado();
+
+	return 0;
+}	
