@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int Funtion(int a,int n){
+  	int q =a/n;
+  	int r=a-(q*n);//Teniendo en cuenta a = q × n + r
+  	if(r<0){
+    	if (q<0){--q;r=a-(q*n);}
+    	if(q>0){++q;r=a-(q*n);}
+ 	 }
+	cout<< "cociente:"<<q<<endl;
+  	cout<< "residuo:"<<r<<endl;
+}
+
+int main() {
+    Funtion(255,-11);
+    return 0;
+}
