@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+#include <string.h>
+using namespace std;
+//rot13
+void cifrado(string message){
+	string abc="abcdefghijklmnopqrstuvxyz";
+	cout<<"Se esta cifrando este mensaje con rot13... ";
+	for (int i=0;i<message.length();i++){
+		int indice=abc.find(message[i]);
+		if(indice==string::npos){
+			message[i]=' ';
+		}
+		else{
+			if(indice+13>abc.length()-1){
+				indice=(indice+13)-abc.length();
+				message[i]=abc[indice];
+			}
+			else{message[i]=abc[indice+13];
+		}}
+	}
+	cout<<endl <<"Mensaje cifrado : "<<message;
+}
+void descifrado(string message){
+	string abc="abcdefghijklmnopqrstuvxyz";
+	cout<<"Ingrese la clave:";
+	int clave ;cin>>clave;
+	for (int i=0;i<message.length();i++){
+		int indice=abc.find(message[i]);
+		if(indice==string::npos){
+			message[i]=' ';
+		}
+		else{
+			if(indice-clave<0){
+				indice=(indice-clave)+abc.length();
+				message[i]=abc[indice];
+			}
+			else{message[i]=abc[indice-clave];}
+		}
+	}
+	cout<<endl<<"Mensaje decifrado:"<<message;
+	
+}
+int main(){
+	//Ejercicio 18.7
+	string message;
+	cout<<"Ingrese el mensaje:";
+	getline(cin,message);
+  cifrado(message);
+	//descifrado(message);}
