@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+int main(){
+	
+	string cadena1( "\t O"
+ 	 			  "\n\t/|\\"
+	 			  "\n\t |"
+ 				  "\n\t/ \\" );
+	string answer="SI";
+	string palabras[6]={"caballo","lapiz","alegria","fantasma","tendedor","sandia"};
+
+	
+	while(answer=="SI"){
+		int rand_1=rand()%6;
+		string adivinar=palabras[rand_1];
+		string auxiliar=adivinar;
+		char asertar;
+		int a=0;
+		string texto(adivinar.length(),'x');
+		while(texto!=auxiliar){
+			int auxi=0;
+			cout<<"Adivine la palabra:    "<<texto<<endl<<endl;
+			cout<<"Introduzca letra:  ";cin>>asertar;
+			for(int i=0;i<texto.length();i++){
+				int indice=adivinar.find(asertar);
+				if(indice!=string::npos){
+					texto[indice]=adivinar[indice];
+					cout<<endl<<"la letra "<<texto[indice]<<" se encuentra en la palabra"<<endl<<endl;
+					adivinar[indice]='\0';
+					auxi++;
+					
+				}	
+			}
+			if(auxi==0){
+				a++;
+				cout<<endl<<"No se encuntra en la palabra. "<<endl;
+				if(a<5){cout << cadena1.substr(0,4+a) << endl << endl;	}
+				else if(a<7 and a>4){cout << cadena1.substr(0,9+a) << endl << endl;}
+				else{cout << cadena1.substr(0,10+a) << endl << endl;}
+			}
+			if(a==7){
+				cout<<"PERDISTE!"<<endl<<endl<<"Desea jugar otra vez? si/no"<<endl;
+					cout<<"Ingrese respuesta: ";cin>>answer; break;
+				}
+			
+		}
+		if(texto==auxiliar){cout<<endl<<"Felicidades!!! Adivino mi palabra. Desea jugar otra vez? si/no"<<endl;
+			cout<<"Ingrese respuesta: ";cin>>answer;
+		}
+		if(answer=="no" or answer=="NO" or answer=="No" or answer=="nO"){
+			answer="NO";
+			break;
+		}
+		else if(answer=="si" or answer=="SI" or answer=="Si" or answer=="sI"){
+			answer="SI";
+		}
+	}
+				  
+}
