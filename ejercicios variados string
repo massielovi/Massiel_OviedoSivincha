@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+#include <string.h>
+using namespace std;
+int main(){
+	/*
+	
+	//Ejercicio 18.11:
+	string nombre;
+	string apellido;
+	
+	cout<<"Ingrese nombre:";cin>>nombre;
+	cout<<endl<<"Ingrese apellido:";cin>>apellido;
+	string name(nombre+' '+apellido);
+	cout<<endl<<name;
+	
+	//Ejercicio 18.19
+	string palabra;
+	string add("******" );
+	cout<<"Ingrese el palabra:";cin>>palabra;
+	int pos=(palabra.length()/2);
+	palabra.insert(pos,add);
+	cout<<palabra;
+	
+	//Ejercicio 18.21
+	string texto;
+	cout<<"Ingrese el texto:";
+	getline(cin,texto);
+	for(int i=0;i<texto.length();i++){
+		if(texto[i]=='.' or texto[i]==':' or texto[i]==';' or texto[i]==',' ){
+			texto.replace (i, 1 ," " );
+		}
+	}
+	int longitud=texto.length();
+	char *ptr2 = new char[ longitud + 1 ]; 
+	texto.copy( ptr2, longitud, 0 ); 
+    ptr2[ longitud ] = '\0'; 
+	char* token = strtok(ptr2, " ");
+	while (token)
+    {
+        cout << token << endl;
+        token = strtok(NULL," ");
+    }
+	
+	//Ejercicio 18.22
+	string text;
+	cout<<"Ingrese el texto:";
+	getline(cin,text);
+	string::const_iterator iterador1 = text.end();
+	  while ( iterador1 != text.begin()-1 ) 
+	  {
+	  cout << *iterador1; 
+	  iterador1--; 
+	  }*/
+	
+}
