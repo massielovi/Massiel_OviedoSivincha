@@ -52,5 +52,18 @@ int main(){
 	  cout << *iterador1; 
 	  iterador1--; 
 	  }*/
+	  
+	  //Ejercicio 18.27
+	  string palabras[6]={"caballo","lapiz","alegria","fantasma","tendedor","sandia"};
+	
+	for(int i=0; i<6;i++){
+		string menor=palabras[i];
+		for(int j=i; j<6;j++){
+			if(menor>palabras[j]){
+				menor.swap(palabras[j]);
+			}
+		}
+		cout<<menor<<endl;
+	}
 	
 }
