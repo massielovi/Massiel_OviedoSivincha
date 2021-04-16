@@ -1,0 +1,57 @@
+#include <iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+int main(){
+	int caracteres;
+	string message;
+	vector<string> vector_1;
+	
+	cout<<"Ingrese el mensaje:";
+	getline(cin,message);
+	cout<< "Ingrese numero de caracteres: ";
+	cin>>caracteres;
+	
+	
+	int tamanio=message.length()%caracteres;
+	
+	
+	if (message.length() % caracteres==0){
+		string add_1;
+		for (int i=0;i<message.length();i++){
+			add_1.append('*'+message.substr(i,i+caracteres));
+			vector_1.push_back(message.substr(i,i+caracteres));
+			cout<<message.substr(i,i+caracteres)<<endl;
+			i=i+(caracteres-1);
+			
+		}	
+		cout<<endl<< "Este es el string modificado con asteriscos:"<<add_1;
+	}
+	else{
+		string add(tamanio+1,'X');
+		message.append(add);
+		string add_1;
+		for (int i=0;i<message.length();i++){
+			add_1.append('*'+message.substr(i,i+caracteres));
+			cout<<message.substr(i,i+caracteres)<<endl;
+			i=i+(caracteres-1);
+		}
+		cout<<endl<< "Este es el string modificado con asteriscos:"<<add_1;
+	}
+	cout<<endl<<endl<<" Con vectores:";
+	for(int numero = 0 ; numero< vector_1.size() ; numero++){
+		cout<<vector_1[numero]<<"|";
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
