@@ -4,7 +4,7 @@ using namespace std;
 void Cripto(string message){
 	// trabajamos con toda la oracion
 	//Empezamos a encontrar la clave:
-	string abc="abcdefghijklmnñopqrstuvwxyz";
+	string abc="abcdefghijklmnÃ±opqrstuvwxyz";
 	cout<<abc.length();	
 	for(int j=0;j<abc.length();j++){
 		cout<<endl<<endl<<"\t"<<"clave:"<<j<<endl;
