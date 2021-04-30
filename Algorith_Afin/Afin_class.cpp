@@ -45,7 +45,7 @@ int Euclides_ext(int a,int b){
 //MOdulo
 int MOD(int a,int n){
   	int q =a/n;
-  	int r=a-(q*n);//Teniendo en cuenta a = q × n + r
+  	int r=a-(q*n);//Teniendo en cuenta a = q Ã— n + r
 	if(r<0){
     	if (q<=0){--q;r=a-(q*n);}
     	if(q>0){++q;r=a-(q*n);}
@@ -64,6 +64,8 @@ Afin::Afin(){
 		a=1+rand()%(26-1);
 		pass_a=Euclides(a,abc.length());
 	}
+	
+	pass_a=a;	
 	//cout<<"claves:"<<endl<<pass_a<<endl<<pass_b<<endl;
 }
 Afin::Afin (int a, int b){
