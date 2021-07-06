@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1623279685 source:c:\users\hp\onedrive\escritorio\tercer semestre-sanpa\algebra abstracta\expo_modular\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<bitset>
+	<string>
+
