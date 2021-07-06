@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1623828028 source:c:\users\hp\onedrive\escritorio\tercer semestre-sanpa\algebra abstracta\solovoystrassen\main.cpp
+	<iostream>
+	<NTL/ZZ.h>
+	<bits/stdc++.h>
+
