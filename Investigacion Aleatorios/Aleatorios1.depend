@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1624022615 source:c:\users\hp\onedrive\escritorio\tercer semestre-sanpa\algebra abstracta\aleatorios1\main.cpp
+	<bits/stdc++.h>
+	<windows.h>
+	<chrono>
+	<psapi.h>
+	<bitset>
+	<NTL/ZZ.h>
+
